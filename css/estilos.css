@@ -180,13 +180,22 @@ a{ text-decoration: none; }
 	text-align: left;
 }
 
-.slider_info .informacion .conocimientos li{
-	text-align: left;
-	padding: .5rem 0;
+.slider_info .informacion .conocimientos{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
 }
 
+.slider_info .informacion .conocimientos li{
+	list-style: none;
+	padding: .5rem 0;
+	width: 33.3%;
+}
+
+
 h3{
-	margin: .5rem 0;
+	
+	padding-bottom: 1rem;
 }
 
 .slider_info .botones span{

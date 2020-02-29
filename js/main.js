@@ -6,8 +6,18 @@
         posicion: 1,
     }
 
+    var info = {
+        padre: $('#info'),
+        numeroSlider: $('#info').children('.slider').length,
+        posicion: 1,
+    }
+
 
     banner.padre.children('.slider').first().css({
+        'left': 0
+    });
+
+    info.padre.children('.slider').first().css({
         'left': 0
     });
 
@@ -19,10 +29,21 @@
         })
     }
 
+    var altoInfo = function(){
+        var alto = info.padre.children('.active').outerHeight();
+
+        info.padre.animate({
+            'height': alto + 'px',
+        })
+    }
+
     altoBanner();
+    altoInfo();
+
 
     $(window).resize(function(){
         altoBanner();
+        altoInfo();
     })
 
 
@@ -110,26 +131,91 @@
     })
 
 
-    //---BANER_INFO-----
 
-    var info = {
-        padre: $('#info'),
-        numeroSlider: $('#info').children('.slider').length,
-        posicion: 1,
-    }
 
-    info.padre.children('.slider').first().css({
-        'left': 0
-    });
+        //---------------
+    //--info--
+    //--------------
 
-    var altoInfo = function(){
-        var alto = info.padre.children('.slider').outerHeight();
+    /*BOTON SIGUIENTE*/
 
-        info.padre.css({
-            'height': alto + 'px',
+    $('#info-next').on('click', function(e){
+        e.preventDefault();
+
+       if(info.posicion < info.numeroSlider){
+
+        info.padre.children().not('.active').css({
+            'left': '100%',
+        });
+
+        $('#info .active').removeClass('active').next().addClass('active').animate({
+            'left': '0%',
+        });
+
+        $('#info .active').prev().animate({
+            'left': '-100%',
         })
-    }
 
-    altoInfo();
+        info.posicion = info.posicion + 1
+
+       }else{
+           $('#info .active').animate({
+               'left': '-100%'
+           })
+
+           info.padre.children().not('.active').css({
+            'left': '100%',
+            });
+           
+
+           $('#info .active').removeClass('active');
+           info.padre.children('.slider').first().addClass('active').animate({
+               'left': '0%',
+           })
+
+           info.posicion = 1
+       }
+         
+    })
+
+    /*BOTON ANTERIOR*/
+
+    $('#info-prev').on('click', function(e){
+        e.preventDefault();
+
+        if(info.posicion > 1){
+            info.padre.children().not('.active').css({
+                'left': '-100%',
+            })
+    
+            $('#info .active').animate({
+                'left': '100%',
+            })
+
+            $('#info .active').removeClass('active').prev().addClass('active').animate({
+                'left': '0%'
+            })
+
+            info.posicion = info.posicion -1
+        }else{
+            info.padre.children().not('.active').css({
+                'left': '-100%',
+            })
+
+            $('#info .active').animate({
+                'left':  '100%'
+            })
+
+            $('#info .active').removeClass('active');
+            info.padre.children().last().addClass('active').animate({
+                'left': '0%'
+            })
+
+            info.posicion = info.numeroSlider;
+        }
+
+    })
+
+
 
  })
