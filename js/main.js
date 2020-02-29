@@ -29,21 +29,20 @@
         })
     }
 
-    var altoInfo = function(){
-        var alto = info.padre.children('.active').outerHeight();
+    // var altoInfo = function(){
+    //     var alto = info.padre.children('.active').outerHeight();
 
-        info.padre.animate({
-            'height': alto + 'px',
-        })
-    }
+    //     info.padre.animate({
+    //         'height': alto + 'px',
+    //     })
+    // }
 
     altoBanner();
-    altoInfo();
+    // altoInfo();
 
 
     $(window).resize(function(){
         altoBanner();
-        altoInfo();
     })
 
 
