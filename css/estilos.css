@@ -18,6 +18,10 @@ body{
 
 a{ text-decoration: none; }
 
+.bold{
+	font-weight: bold;
+}
+
 .contenedor{
 	max-width: 700px;
 	width: 90%;
@@ -33,6 +37,7 @@ a{ text-decoration: none; }
 	border-radius: .5rem;
 	overflow: hidden;
 	z-index: 100;
+	width: 100%;
 }
 
 /******************/
@@ -78,4 +83,108 @@ a{ text-decoration: none; }
 
 .slider_banner .siguiente{
 	right: 2rem;
+}
+
+/******************/
+/*--SLIDER-INFO--*/
+/******************/
+
+.slider_info{
+	text-align: center;
+	overflow: hidden;
+	padding: 2rem 0;
+	position: relative;
+}
+
+/* section informacion */
+
+.slider_info .informacion{
+	width: 100%;
+}
+
+.slider_info .informacion article{
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.slider_info .informacion article .slider{
+	background-color: #fff;
+	
+	width: 100%;
+	position: absolute;
+	left: 100%;
+	padding: 2rem 8rem;
+}
+
+.slider_info .flecha-info{
+	font-size: 3.5rem;
+	line-height: 3.5rem;
+	color: #e6e6e6;
+	position: absolute;
+	top: 50%;
+	z-index: 1100;
+}
+
+.slider_info .flecha-info:hover{
+	color: #6ed279;
+
+}
+
+.slider_info .anterior{
+	left: 2rem;
+}
+
+.slider_info .siguiente{
+	right: 2rem;
+}
+
+/* estilos para los slider de info */
+
+.slider_info .informacion .nombre{
+	color: #444;
+	font-size: 38px;
+	line-height: 38px;
+	font-weight: 600;
+}
+
+.slider_info .informacion .trabajo{
+	color: #55ac8dee;
+	font-size: 18px;
+	line-height: 18px;
+	padding: 1.6rem 0;
+	
+}
+
+.slider_info .informacion .pais{
+	color: #8d8d8d;
+	font-size: 14px;
+	line-height: 14px;
+	
+}
+
+.slider_info .informacion .pais img{
+	position: relative;
+	top: .6rem;
+	margin-right: .5rem;
+}
+
+.slider_info .informacion .datos{
+	display: flex;
+	justify-content: space-between;
+	padding: .5rem 0;
+}
+
+.slider_info .informacion .datos span{
+	width: 50%;
+	text-align: left;
+}
+
+.slider_info .informacion .conocimientos li{
+	text-align: left;
+	padding: .5rem 0;
+}
+
+h3{
+	margin: .5rem 0;
 }

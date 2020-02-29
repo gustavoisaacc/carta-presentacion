@@ -6,6 +6,7 @@
         posicion: 1,
     }
 
+
     banner.padre.children('.slider').first().css({
         'left': 0
     });
@@ -107,5 +108,28 @@
         }
 
     })
+
+
+    //---BANER_INFO-----
+
+    var info = {
+        padre: $('#info'),
+        numeroSlider: $('#info').children('.slider').length,
+        posicion: 1,
+    }
+
+    info.padre.children('.slider').first().css({
+        'left': 0
+    });
+
+    var altoInfo = function(){
+        var alto = info.padre.children('.slider').outerHeight();
+
+        info.padre.css({
+            'height': alto + 'px',
+        })
+    }
+
+    altoInfo();
 
  })
