@@ -32,6 +32,7 @@
     /*BOTON SIGUIENTE*/
 
     $('#banner-next').on('click', function(e){
+        e.preventDefault();
 
        if(banner.posicion < banner.numeroSlider){
 
@@ -67,6 +68,44 @@
            banner.posicion = 1
        }
          
+    })
+
+    /*BOTON ANTERIOR*/
+
+    $('#banner-prev').on('click', function(e){
+        e.preventDefault();
+
+        if(banner.posicion > 1){
+            banner.padre.children().not('.active').css({
+                'left': '-100%',
+            })
+    
+            $('#banner .active').animate({
+                'left': '100%',
+            })
+
+            $('#banner .active').removeClass('active').prev().addClass('active').animate({
+                'left': '0%'
+            })
+
+            banner.posicion = banner.posicion -1
+        }else{
+            banner.padre.children().not('.active').css({
+                'left': '-100%',
+            })
+
+            $('#banner .active').animate({
+                'left':  '100%'
+            })
+
+            $('#banner .active').removeClass('active');
+            banner.padre.children().last().addClass('active').animate({
+                'left': '0%'
+            })
+
+            banner.posicion = banner.numeroSlider;
+        }
+
     })
 
  })
