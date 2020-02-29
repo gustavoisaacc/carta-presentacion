@@ -188,3 +188,48 @@ a{ text-decoration: none; }
 h3{
 	margin: .5rem 0;
 }
+
+.slider_info .botones span{
+	width: 14px;
+	height: 14px;
+	display: inline-block;
+	margin: 0 1rem;
+	border-radius: 50%;
+	background: #e6e6e6;
+}
+
+.slider_info .botones .active{
+	background: #6ed279;
+}
+
+
+/* redes sociales */
+
+.redes-sociales{
+	width: 100%;
+	text-align: center;
+	padding: 2rem 0;
+}
+
+.redes-sociales a{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	line-height: 20px;
+	padding: 14px 0;
+	color: #fff;
+	margin: 0 1rem;
+	border-radius: 50%;
+}
+
+.facebook{
+	background: #3b5998;
+}
+
+.git{
+	background: #000;
+}
+
+.wsp{
+	background: #07bc4c;
+}
